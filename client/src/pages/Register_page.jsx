@@ -8,7 +8,7 @@ function Register() {
     const RegisterUser = async (e) => {
         e.preventDefault();
         try{
-            const responst = await axios.get("https://booking-app-server-f24zi0c4b-gourab-das-projects.vercel.app/");
+            const responst = await axios.get("https://booking-app-server-omega.vercel.app/");
             console.log(responst);
         }catch(error){
             console.log(error);
