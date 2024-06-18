@@ -4,7 +4,7 @@ import { Routes , Route , Link} from 'react-router-dom';
 import Index_page from './pages/Index_page';
 import Login_page from './pages/Login_page';
 import Layout from './Layout';
-import Register from './pages/Register';
+import Register from './pages/Register_page';
 
 function App() {
 
