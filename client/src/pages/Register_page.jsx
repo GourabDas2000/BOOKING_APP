@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+
+
 function Register() {
     const [name ,setname] = useState('');
     const [email,setemail] = useState('');
     const [password,setpassword] = useState('');
     const RegisterUser = async (e) => {
         e.preventDefault();
-        try{
-            const responst = await axios.get("https://booking-app-server-omega.vercel.app/");
-            console.log(responst);
+        try{           
+            const responst = await axios.post(`${import.meta.env.VITE_BASE_URL}register`,{name,email,password});
+            console.log(responst.data);
         }catch(error){
             console.log(error);
         }
@@ -23,7 +25,7 @@ function Register() {
                   <input type='text' placeholder='username' value={name} onChange={ev => setname(ev.target.value)} />
                   <input type='email' placeholder='your@email.com' value={email} onChange={ev => setemail(ev.target.value)} />
                   <input type='password' placeholder='password' value={password} onChange={ev => setpassword(ev.target.value)} />
-                  <button className='primary'>Login</button>
+                  <button className='primary'>Register</button>
                   <div className='text-center py-2 text-gray-500'>
                       Already have an account?<Link className='underline text-black' to="/login">SignIn</Link>
                   </div>
