@@ -4,7 +4,7 @@ const app = express();
 
 
 app.use(cors({
-    origin: 'https://booking-app-three-fawn.vercel.app/'
+    origin: 'https://booking-app-three-fawn.vercel.app',
 }));
 
 app.get('/', (req, res) => {
