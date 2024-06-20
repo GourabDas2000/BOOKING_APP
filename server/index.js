@@ -71,13 +71,21 @@ app.get('/profile', (req, res) => {
             if (err) {
                 throw err
             } else {
-                console.log('user', user)
                 res.json(user)
             }
         })
     } else {
         res.json({})
     }
+})
+
+app.post('/logout', (req, res) => {
+    res.cookie('token', '', {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'strict',
+        expires: new Date(0)
+    }).json(true);
 })
 
 app.listen(4000, () => {
